@@ -38,6 +38,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Demo\Demo01Tests.cs" />
+    <Compile Include="Demo\Demo02Tests.cs" />
     <Compile Include="MultipleAssertionTests.cs" />
     <Compile Include="NUnitSpecificAndOtherTestsInternal.cs" />
     <Compile Include="RunInExclusiveGroupAttriuteTests.cs" />
