@@ -184,5 +184,13 @@ T15: assert; tc: 2
 
 ___ Test case OK _________");
       }
+
+      [Test]
+      public void T16()
+      {
+         AssertInvoke.That(() => _ut.T16(1, 2), @"", typeof(AssertionException), @"Metoda nie została zakwalifikowana przez QuickTestsFramework do uruchomienia.");
+      }
    }
+
+    
 }

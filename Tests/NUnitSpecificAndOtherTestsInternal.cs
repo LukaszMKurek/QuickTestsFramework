@@ -6,7 +6,7 @@ using NUnit.Framework;
 namespace QuickTestsFramework.Tests
 {
    [Ignore]
-   public sealed class NUnitSpecificAndOtherTestsInternal
+   public sealed class NUnitSpecificAndOtherTestsInternal : NUnitSpecificAndOtherTestsBaseInternal
    {
       private Runner _qt;
 
@@ -159,6 +159,24 @@ namespace QuickTestsFramework.Tests
             () => new[] { 1, 2 },
             tc => Console.WriteLine("T{0}: init; tc: {1}", x, tc),
             tc => Console.WriteLine("T{0}: assert; tc: {1}", x, tc));
+      }
+
+      [TestCase(1, 2)]
+      public void T16(int i, int j)
+      {
+         _qt.Run(
+            () => new int[1],
+            tc => Console.WriteLine("T04: init; tc: {0}", tc),
+            tc => Console.WriteLine("T04: assert; tc: {0}", tc));
+      }
+   }
+
+   [Ignore]
+   public class NUnitSpecificAndOtherTestsBaseInternal
+   {
+      [TestCase(1, 2)]
+      public void T16(int i, int j)
+      {
       }
    }
 }

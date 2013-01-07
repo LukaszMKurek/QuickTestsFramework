@@ -1,27 +1,28 @@
 using System.Linq;
 using System.Collections.Generic;
 using System;
+using System.Reflection;
 
 namespace QuickTestsFramework
 {
    public sealed class TestMethodInvoker
    {
-      private readonly string _name;
+      private readonly MethodBase _method;
       private readonly bool _willExecute;
       private readonly Action _execute;
       private readonly Action _runDuringVerification;
 
-      public TestMethodInvoker(string name, bool willExecute, Action execute, Action runDuringVerification)
+      public TestMethodInvoker(MethodBase method, bool willExecute, Action execute, Action runDuringVerification)
       {
-         _name = name;
+         _method = method;
          _willExecute = willExecute;
          _execute = execute;
          _runDuringVerification = runDuringVerification;
       }
 
-      public string Name
+      public MethodBase Method
       {
-         get { return _name; }
+         get { return _method; }
       }
 
       public bool WillExecute

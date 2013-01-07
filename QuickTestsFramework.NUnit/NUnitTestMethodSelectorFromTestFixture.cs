@@ -16,7 +16,14 @@ namespace QuickTestsFramework.NUnit
          if (stackFrames == null)
             throw new InvalidOperationException("Reflection sucks. Probably you wrong use Run method.");
 
-         StackFrame stackFrame = stackFrames.FirstOrDefault(x => x.GetMethod().IsDefined(typeof(TestAttribute), true));
+         StackFrame stackFrame = stackFrames.FirstOrDefault(x =>
+         {
+            var methodBase = x.GetMethod();
+            return 
+               methodBase.IsDefined(typeof(TestAttribute), true) || 
+               methodBase.IsDefined(typeof(TestCaseSourceAttribute), true) || 
+               methodBase.IsDefined(typeof(TestCaseAttribute), true);
+         });
          if (stackFrame == null)
             throw new InvalidOperationException("Run method can be call only by test method with [Test] attribute.");
 

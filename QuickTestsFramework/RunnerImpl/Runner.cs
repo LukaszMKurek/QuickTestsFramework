@@ -34,7 +34,7 @@ namespace QuickTestsFramework
 
           IEnumerable<TestMethodInvoker> testsToRun = _testSelector.GetTestsToRun(testFixtureInstance);
 
-          _testMethods = testsToRun.ToDictionary(x => x.Name);
+          _testMethods = testsToRun.ToDictionary(x => GetMethodName(x.Method));
 
           foreach (var testMethod in _testMethods.Values)
           {
@@ -47,17 +47,22 @@ namespace QuickTestsFramework
                 catch (TargetInvocationException ex)
                 {
                    Action reportProblem = () => _viewTestFixture.ReportInitializationExcepton(ex.InnerException);
-                   ReportProblem(testMethod.Name, reportProblem);
+                   ReportProblem(GetMethodName(testMethod.Method), reportProblem);
                 }
                 catch (Exception ex)
                 {
                    Action reportProblem = () => _viewTestFixture.ReportInitializationExcepton(ex);
-                   ReportProblem(testMethod.Name, reportProblem);
+                   ReportProblem(GetMethodName(testMethod.Method), reportProblem);
                 }
              }
           }
 
           _initialized = true;
+       }
+
+       private static string GetMethodName(MethodBase method)
+       {
+          return method.DeclaringType.FullName + method.Name + "(" + string.Join(", ", method.GetParameters().Select(x => x.ParameterType.FullName)) + ")";
        }
 
        public void Run(Action inicializer, Action assertion)
@@ -94,7 +99,8 @@ namespace QuickTestsFramework
 
        private string GetNameOfRunningTest()
        {
-         return  _testMethodSelectorFromCallStack.GetCallingTestMethod().Name;
+          MethodBase callingTestMethod = _testMethodSelectorFromCallStack.GetCallingTestMethod();
+          return GetMethodName(callingTestMethod);
        }
 
        public void Run<T>(Func<IEnumerable<T>> testCaseGenerator, Action<T> inicializer, Action<T> assertion)

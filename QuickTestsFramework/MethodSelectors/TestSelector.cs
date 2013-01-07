@@ -38,7 +38,7 @@ namespace QuickTestsFramework
       private IEnumerable<TestMethodInvoker> MapMethodData(IEnumerable<MethodData> filterMethodDataByExclusiveGroup, object testFixtureInstance)
       {
          return filterMethodDataByExclusiveGroup.Select(method => new TestMethodInvoker(
-            name: method.MethodInfo.Name,
+            method: method.MethodInfo,
             willExecute: method.WillExecute,
             runDuringVerification: () =>
             {
