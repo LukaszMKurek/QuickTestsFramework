@@ -76,6 +76,7 @@
     <Compile Include="Demo\Demo02Tests.cs" />
     <Compile Include="MultipleAssertionTests.cs" />
     <Compile Include="NUnitSpecificAndOtherTestsInternal.cs" />
+    <Compile Include="ObjectGenerator\ObjectGeneratorTests.cs" />
     <Compile Include="RunInExclusiveGroupAttriuteTests.cs" />
     <Compile Include="RunInExclusiveGroupAttriuteTestInternal.cs" />
     <Compile Include="SequentialTests.cs" />
