@@ -51,6 +51,7 @@
     <Compile Include="RunnerImpl\IViewTestFixture.cs" />
     <Compile Include="Utils\MultipleAssertion.cs" />
     <Compile Include="Utils\ObjectGenerator.cs" />
+    <Compile Include="Utils\ResultValidator.cs" />
     <Compile Include="Utils\Sequential.cs" />
     <Compile Include="Utils\TestApiAdapter.cs" />
     <Compile Include="View\InicjalizerView.cs" />
