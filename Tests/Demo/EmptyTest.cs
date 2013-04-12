@@ -17,7 +17,7 @@ namespace QuickTestsFramework.Tests
             _runner = RunnerHelper.Create();
             _runner.RunInitializers(this);
 
-            // consolidate data from initializers and execute process here
+            // consolidate data from initializers and execute batch process here
         }
 
         [Test]

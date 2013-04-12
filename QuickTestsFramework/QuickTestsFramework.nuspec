@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>QuickTestsFramework.Core</id>
+        <version>$version$</version>
+        <title>QuickTestsFramework.Core</title>
+        <authors>$author$</authors>
+        <licenseUrl>https://quicktestsframework.codeplex.com/license</licenseUrl>
+        <projectUrl>https://quicktestsframework.codeplex.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>$description$</description>
+        <summary>Framework that can significantly speedup execution automatic tests in batching systems.</summary>
+        <releaseNotes>First release</releaseNotes>
+        <copyright>Lukasz K.</copyright>
+        <tags>tests, fast, batch, framework</tags>
+        <frameworkAssemblies>
+            <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.0, .NETFramework4.5, .NETFramework4.5.1" />
+            <frameworkAssembly assemblyName="System.Core" targetFramework=".NETFramework4.0, .NETFramework4.5, .NETFramework4.5.1" />
+        </frameworkAssemblies>
+    </metadata>
+</package>
