@@ -17,19 +17,33 @@ namespace QuickTestsFramework.Tests
             _runner = RunnerHelper.Create();
             _runner.RunInitializers(this);
 
-            Console.WriteLine("Process...");
+            // consolidate data from initializers and execute process here
         }
 
         [Test]
         public void T01()
         {
             _runner.Run(
+                inicializer: () =>
+                {
+
+                },
+                assertion: () =>
+                {
+
+                });
+        }
+
+        [Test]
+        public void T02_parametrized()
+        {
+            _runner.Run(
                 testCaseGenerator: () => Enumerable.Range(0, 10),
-                inicializer: tc =>
+                inicializer: testCase =>
                 {
                     
                 },
-                assertion: tc =>
+                assertion: testCase =>
                 {
                     
                 });
