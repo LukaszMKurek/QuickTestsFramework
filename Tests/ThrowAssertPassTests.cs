@@ -85,7 +85,7 @@ ___ Test case OK _________
 ExceptionInAserrt; init; tc: 2
 
 ExceptionInAserrt; assert; tc: 2
-Assercja ¿uci³a wyj¹tek: 
+Assercja rzuci³a wyj¹tek: 
 Assert.Pass message
 
 ___ Test case OK _________
@@ -103,7 +103,7 @@ ___ Test case OK _________
 ExceptionInAserrt; init; tc: 7
 
 ExceptionInAserrt; assert; tc: 7
-Assercja ¿uci³a wyj¹tek: 
+Assercja rzuci³a wyj¹tek: 
 Assert.Pass message
 
 ___ Test case OK _________
@@ -166,7 +166,7 @@ ExceptionBeforeRun; before;", typeof(SuccessException), @"Assert.Pass message");
          AssertInvoke.That(() => _ut.ExceptionAfterRun(), @"
 ExceptionAfterRun; before;
 
-Metoda testowa ¿uci³a wyj¹tek.
+Metoda testowa rzuci³a wyj¹tek.
 Assert.Pass message
 
 ___ Test FAIL _________", typeof(AssertionException), @"Wczasie inicjalizacji pojawi³y siê b³êdy.");

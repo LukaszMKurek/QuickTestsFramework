@@ -46,12 +46,12 @@ namespace QuickTestsFramework
 
       public void ReportException(Exception exception)
       {
-         Console.WriteLine("Assercja żuciła wyjątek: \r\n{0}", _exceptionFilter.RenderExceptionConditional(exception));
+         Console.WriteLine("Assercja rzuciła wyjątek: \r\n{0}", _exceptionFilter.RenderExceptionConditional(exception));
       }
 
       public void ReportInitializationExcepton(Exception exception)
       {
-         Console.WriteLine("Metoda testowa żuciła wyjątek.\r\n" + _exceptionFilter.RenderException(exception));
+         Console.WriteLine("Metoda testowa rzuciła wyjątek.\r\n" + _exceptionFilter.RenderException(exception));
       }
 
       public void ReportNullArgument(string message)
