@@ -7,8 +7,8 @@
     <ProjectGuid>{966DDBAF-78E8-4D91-B189-DF7D80C1EE42}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>QuickTestsFramework.NUnitUniwersal</RootNamespace>
-    <AssemblyName>QuickTestsFramework.NUnitUniwersal</AssemblyName>
+    <RootNamespace>QuickTestsFramework.NUnit</RootNamespace>
+    <AssemblyName>QuickTestsFramework.NUnit</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

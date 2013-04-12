@@ -99,9 +99,9 @@
     <Compile Include="ThrowExceptionTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\QuickTestsFramework.NUnitUniwersal\QuickTestsFramework.NUnitUniwersal.csproj">
+    <ProjectReference Include="..\QuickTestsFramework.NUnit\QuickTestsFramework.NUnit.csproj">
       <Project>{966ddbaf-78e8-4d91-b189-df7d80c1ee42}</Project>
-      <Name>QuickTestsFramework.NUnitUniwersal</Name>
+      <Name>QuickTestsFramework.NUnit</Name>
     </ProjectReference>
     <ProjectReference Include="..\QuickTestsFramework\QuickTestsFramework.csproj">
       <Project>{e3c4819d-89cc-4543-adaa-c95c522fc22a}</Project>

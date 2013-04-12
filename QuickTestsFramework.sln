@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTestsFramework", "Quic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTestsFramework.Tests", "Tests\QuickTestsFramework.Tests.csproj", "{9C804288-CE58-413F-9717-EB909F41704C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTestsFramework.NUnitUniwersal", "QuickTestsFramework.NUnitUniwersal\QuickTestsFramework.NUnitUniwersal.csproj", "{966DDBAF-78E8-4D91-B189-DF7D80C1EE42}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTestsFramework.NUnit", "QuickTestsFramework.NUnit\QuickTestsFramework.NUnit.csproj", "{966DDBAF-78E8-4D91-B189-DF7D80C1EE42}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
