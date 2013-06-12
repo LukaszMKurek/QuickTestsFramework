@@ -52,6 +52,7 @@ namespace QuickTestsFramework.Tests.Demo
             () =>
             {
                Console.WriteLine("T02: Analyze output state.");
+
                Assert.Fail("some reason...");
             });
       }

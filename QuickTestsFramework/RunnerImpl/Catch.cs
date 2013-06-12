@@ -31,27 +31,42 @@ namespace QuickTestsFramework
          var writer = new TextWriterTraceListener(Console.Out);
          try
          {
-            AddListenerIfNotExist(Debug.Listeners, writer);
-            AddListenerIfNotExist(Trace.Listeners, writer);
+            AddDebugListenerIfNotExist(writer);
+            AddTraceListenerIfNotExist(writer);
+
             action();
          }
          finally
          {
-            RemoveListenerIfExist(Trace.Listeners, writer);
-            RemoveListenerIfExist(Debug.Listeners, writer);
+            RemoveTraceListenerIfExist(writer);
+            RemoveDebugListenerIfExist(writer);
          }
       }
 
-      private static void AddListenerIfNotExist(TraceListenerCollection traceListeners, TextWriterTraceListener writer)
+      [Conditional("DEBUG")]
+      private static void AddDebugListenerIfNotExist(TextWriterTraceListener writer)
       {
-         if (traceListeners.OfType<TextWriterTraceListener>().Any(tw => tw.Writer == Console.Out) == false)
-            traceListeners.Add(writer);
+         if (Debug.Listeners.OfType<TextWriterTraceListener>().Any(tw => tw.Writer == Console.Out) == false)
+            Debug.Listeners.Add(writer);
       }
 
-      private static void RemoveListenerIfExist(TraceListenerCollection traceListeners, TextWriterTraceListener writer)
+      [Conditional("DEBUG")]
+      private static void RemoveDebugListenerIfExist(TextWriterTraceListener writer)
       {
-         if (traceListeners.OfType<TextWriterTraceListener>().Any(tw => tw.Writer == Console.Out) == false)
-            traceListeners.Add(writer);
+         Debug.Listeners.Remove(writer);
+      }
+
+      [Conditional("TRACE")]
+      private static void AddTraceListenerIfNotExist(TextWriterTraceListener writer)
+      {
+         if (Trace.Listeners.OfType<TextWriterTraceListener>().Any(tw => tw.Writer == Console.Out) == false)
+            Trace.Listeners.Add(writer);
+      }
+
+      [Conditional("TRACE")]
+      private static void RemoveTraceListenerIfExist(TextWriterTraceListener writer)
+      {
+         Trace.Listeners.Remove(writer);
       }
 
       public static string Output(Action action)

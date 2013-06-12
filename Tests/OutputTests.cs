@@ -10,10 +10,22 @@ namespace QuickTestsFramework.Tests
    public sealed class OutputTests
    {
       private OutputTestsInternal _ut;
+      private int _traceListenersCountAtStart;
+      private int _debugListenersCountAtStart;
+
+      [TestFixtureTearDown]
+      public void TearDown()
+      {
+         Assert.That(Trace.Listeners.Count, Is.EqualTo(_traceListenersCountAtStart));
+         Assert.That(Debug.Listeners.Count, Is.EqualTo(_debugListenersCountAtStart));
+      }
 
       [TestFixtureSetUp]
       public void SetUp()
       {
+         _traceListenersCountAtStart = Trace.Listeners.Count;
+         _debugListenersCountAtStart = Debug.Listeners.Count;
+
          _ut = new OutputTestsInternal();
          AssertInvoke.That(() => _ut.SetUp(), @"
 Debug 1: Before 1

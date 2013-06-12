@@ -27,6 +27,10 @@ namespace QuickTestsFramework
           _testMethodSelectorFromCallStack = testMethodSelectorFromCallStack;
        }
 
+       /// <summary>
+       /// Metoda odpowiedzialna za uruchomienie wszystkich (albo tylko wybranych) metod generujących przypadki testowe i metod inicujących dane.
+       /// </summary>
+       /// <param name="testFixtureInstance">Instancja klasy testu w którym uruchamiają się testy.</param>
        public void RunInitializers(object testFixtureInstance)
        {
           if (_initialized)
@@ -65,6 +69,11 @@ namespace QuickTestsFramework
           return method.DeclaringType.FullName + method.Name + "(" + string.Join(", ", method.GetParameters().Select(x => x.ParameterType.FullName)) + ")";
        }
 
+       /// <summary>
+       /// Uruchamia podane delegaty w zależności to fazy uruchamiania testu.
+       /// </summary>
+       /// <param name="inicializer">Delegata uruchamiana z TestFixtureSetup. Odpowiedzialna za zebranie danych początkowych dla procesu.</param>
+       /// <param name="assertion">Delegata uruchamiana po zakończeniu procesu celem weryfikacji poprawności danych wujściowych.</param>
        public void Run(Action inicializer, Action assertion)
        {
           string methodName = GetNameOfRunningTest();
@@ -103,6 +112,12 @@ namespace QuickTestsFramework
           return GetMethodName(callingTestMethod);
        }
 
+       /// <summary>
+       /// Uruchamia podane delegaty w zależności to fazy uruchamiania testu.
+       /// </summary>
+       /// <param name="testCaseGenerator">Delegata odpowiedzialna za generowanie przypadków testowych. Przypadki są keszowane i są dostępne z parametru delegat inicializer oraz assertion</param>
+       /// <param name="inicializer">Delegata uruchamiana z TestFixtureSetup. Odpowiedzialna za zebranie danych początkowych dla procesu.</param>
+       /// <param name="assertion">Delegata uruchamiana po zakończeniu procesu celem weryfikacji poprawności danych wujściowych.</param>
        public void Run<T>(Func<IEnumerable<T>> testCaseGenerator, Action<T> inicializer, Action<T> assertion)
        {
           string methodName = GetNameOfRunningTest();

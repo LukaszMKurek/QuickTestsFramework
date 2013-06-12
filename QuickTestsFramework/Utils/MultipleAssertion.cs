@@ -18,6 +18,11 @@ namespace QuickTestsFramework
       // użucie expression może 
       public void Run(params Action[] actions)
       {
+         Run((IEnumerable<Action>)actions);
+      }
+
+      public void Run(IEnumerable<Action> actions)
+      {
          if (actions == null)
             throw new ArgumentNullException("actions");
          
