@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="Demo\Demo01Tests.cs" />
     <Compile Include="Demo\Demo02Tests.cs" />
+    <Compile Include="Demo\Demo03MoreRealisticTests.cs" />
     <Compile Include="MultipleAssertionTests.cs" />
     <Compile Include="NUnitSpecificAndOtherTestsInternal.cs" />
     <Compile Include="ObjectGenerator\ObjectGeneratorTests.cs" />
@@ -94,9 +95,9 @@
     <Compile Include="ThrowExceptionTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\QuickTestsFramework.NUnit\QuickTestsFramework.NUnit.csproj">
-      <Project>{0f85bd88-b0a8-4f2c-9e83-00880cde51c6}</Project>
-      <Name>QuickTestsFramework.NUnit</Name>
+    <ProjectReference Include="..\QuickTestsFramework.NUnitUniwersal\QuickTestsFramework.NUnitUniwersal.csproj">
+      <Project>{966ddbaf-78e8-4d91-b189-df7d80c1ee42}</Project>
+      <Name>QuickTestsFramework.NUnitUniwersal</Name>
     </ProjectReference>
     <ProjectReference Include="..\QuickTestsFramework\QuickTestsFramework.csproj">
       <Project>{e3c4819d-89cc-4543-adaa-c95c522fc22a}</Project>

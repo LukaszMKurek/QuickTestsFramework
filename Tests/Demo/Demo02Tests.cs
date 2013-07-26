@@ -39,6 +39,7 @@ namespace QuickTestsFramework.Tests.Demo
       }
 
       [Test]
+      [RunInExclusiveGroup]
       public void T02()
       {
          var random = new Random();

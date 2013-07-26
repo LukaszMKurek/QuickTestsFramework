@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTestsFramework.Tests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTestsFramework.NUnit", "QuickTestsFramework.NUnit\QuickTestsFramework.NUnit.csproj", "{0F85BD88-B0A8-4F2C-9E83-00880CDE51C6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTestsFramework.NUnitUniwersal", "QuickTestsFramework.NUnitUniwersal\QuickTestsFramework.NUnitUniwersal.csproj", "{966DDBAF-78E8-4D91-B189-DF7D80C1EE42}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,9 +24,13 @@ Global
 		{9C804288-CE58-413F-9717-EB909F41704C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C804288-CE58-413F-9717-EB909F41704C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F85BD88-B0A8-4F2C-9E83-00880CDE51C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0F85BD88-B0A8-4F2C-9E83-00880CDE51C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F85BD88-B0A8-4F2C-9E83-00880CDE51C6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{0F85BD88-B0A8-4F2C-9E83-00880CDE51C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F85BD88-B0A8-4F2C-9E83-00880CDE51C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{966DDBAF-78E8-4D91-B189-DF7D80C1EE42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{966DDBAF-78E8-4D91-B189-DF7D80C1EE42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{966DDBAF-78E8-4D91-B189-DF7D80C1EE42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{966DDBAF-78E8-4D91-B189-DF7D80C1EE42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
