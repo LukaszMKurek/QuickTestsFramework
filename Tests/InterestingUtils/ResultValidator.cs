@@ -21,7 +21,7 @@ namespace QuickTestsFramework.Utils
         );
      */
 
-    public sealed class ConditionPathStatistics
+    /*public sealed class ConditionPathStatistics
     {
         private readonly Dictionary<Expression, ConditionExpressionStatistics> _stats =
             new Dictionary<Expression, ConditionExpressionStatistics>();
@@ -336,5 +336,5 @@ namespace QuickTestsFramework.Utils
                 Console.WriteLine("***\r\n");
             }
         }
-    }
+    }*/
 }

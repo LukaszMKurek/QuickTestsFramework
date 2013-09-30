@@ -75,9 +75,11 @@
     <Compile Include="Demo\Demo01Tests.cs" />
     <Compile Include="Demo\Demo02Tests.cs" />
     <Compile Include="Demo\Demo03MoreRealisticTests.cs" />
+    <Compile Include="InterestingUtils\MultipleAssertion.cs" />
+    <Compile Include="InterestingUtils\ResultValidator.cs" />
+    <Compile Include="InterestingUtils\Sequential.cs" />
     <Compile Include="MultipleAssertionTests.cs" />
     <Compile Include="NUnitSpecificAndOtherTestsInternal.cs" />
-    <Compile Include="ObjectGenerator\ObjectGeneratorTests.cs" />
     <Compile Include="RunInExclusiveGroupAttriuteTests.cs" />
     <Compile Include="RunInExclusiveGroupAttriuteTestInternal.cs" />
     <Compile Include="SequentialTests.cs" />
