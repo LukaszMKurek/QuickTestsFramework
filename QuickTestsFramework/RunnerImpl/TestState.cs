@@ -3,7 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System;
 
-namespace QuickTestsFramework
+namespace QuickTestsFramework.Internals
 {
    public sealed class TestState
    {

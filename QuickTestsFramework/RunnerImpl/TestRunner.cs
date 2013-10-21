@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace QuickTestsFramework
+namespace QuickTestsFramework.Internals
 {
    public static class TestRunner
    {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace QuickTestsFramework
+namespace QuickTestsFramework.Internals
 {
    /*
     Wprowadzic mechanizm akcji dla konkretnych wyjątków żucanych

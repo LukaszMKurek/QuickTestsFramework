@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Collections.Generic;
 using System;
-using QuickTestsFramework;
+using QuickTestsFramework.Internals;
 using QuickTestsFramework.NUnit;
 
 namespace QuickTestsFramework.Tests

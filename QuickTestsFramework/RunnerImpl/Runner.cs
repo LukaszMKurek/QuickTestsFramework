@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using QuickTestsFramework.Internals;
 
 namespace QuickTestsFramework
 {
+   /// <summary>
+    /// Klasa odpowiedzialna za uruchamianie testów.
+    /// </summary>
     public sealed class Runner
     {
        private bool _initialized;
@@ -16,6 +20,7 @@ namespace QuickTestsFramework
        private readonly TestSelector _testSelector;
        private readonly IAssertionAction _assertionAction;
        private readonly ITestMethodSelectorFromCallStack _testMethodSelectorFromCallStack;
+       private SlowRunner _slowRunner;
 
        public Runner(IExceptionFilter exceptionFilter, IViewTestFixture viewTestFixture, IInicjalizerView inicjalizerView, TestSelector testSelector, IAssertionAction assertionAction, ITestMethodSelectorFromCallStack testMethodSelectorFromCallStack)
        {
@@ -27,14 +32,35 @@ namespace QuickTestsFramework
           _testMethodSelectorFromCallStack = testMethodSelectorFromCallStack;
        }
 
+      /// <summary>
+      /// Metoda umożliwiająca wywołanie testów w trybie wolnym. Po każdym incjalizerze wywołana zostanie testowana akcja a następnie assercja. <br/>
+      /// Metoda służy jedynie debugowaniu testów. Uruchamianie testów jest wykonywane bez żadnej otoczki QuickTestsFrameworka.
+      /// </summary>
+      /// <param name="action">Testowana akcja.</param>
+      public void RunTestsInSlowMode(Action action)
+      {
+         if (action == null)
+            throw new ArgumentNullException("action");
+         if (_slowRunner != null)
+            throw new InvalidOperationException("Multiple initialization occurred.");
+         if (_initialized)
+            throw new InvalidOperationException("RunTestInSlowMode or RunInitializers can be called, not both.");
+
+         _slowRunner = new SlowRunner(action);
+      }
+
        /// <summary>
        /// Metoda odpowiedzialna za uruchomienie wszystkich (albo tylko wybranych) metod generujących przypadki testowe i metod inicujących dane.
        /// </summary>
        /// <param name="testFixtureInstance">Instancja klasy testu w którym uruchamiają się testy.</param>
        public void RunInitializers(object testFixtureInstance)
        {
+          if (testFixtureInstance == null)
+             throw new ArgumentNullException("testFixtureInstance");
           if (_initialized)
              throw new InvalidOperationException("Multiple initialization occurred.");
+          if (_slowRunner != null)
+             throw new InvalidOperationException("RunTestInSlowMode or RunInitializers can be called, not both.");
 
           IEnumerable<TestMethodInvoker> testsToRun = _testSelector.GetTestsToRun(testFixtureInstance);
 
@@ -76,6 +102,12 @@ namespace QuickTestsFramework
        /// <param name="assertion">Delegata uruchamiana po zakończeniu procesu celem weryfikacji poprawności danych wujściowych.</param>
        public void Run(Action inicializer, Action assertion)
        {
+          if (_slowRunner != null)
+          {
+             _slowRunner.Run(inicializer, assertion);
+             return;
+          }
+
           string methodName = GetNameOfRunningTest();
           if (_initialized == false)
           {
@@ -120,6 +152,12 @@ namespace QuickTestsFramework
        /// <param name="assertion">Delegata uruchamiana po zakończeniu procesu celem weryfikacji poprawności danych wujściowych.</param>
        public void Run<T>(Func<IEnumerable<T>> testCaseGenerator, Action<T> inicializer, Action<T> assertion)
        {
+          if (_slowRunner != null)
+          {
+             _slowRunner.Run(testCaseGenerator, inicializer, assertion);
+             return;
+          }
+
           string methodName = GetNameOfRunningTest();
           if (_initialized == false)
           {

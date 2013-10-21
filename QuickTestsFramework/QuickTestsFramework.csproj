@@ -52,6 +52,7 @@
     <Compile Include="RunnerImpl\IInicjalizerView.cs" />
     <Compile Include="RunnerImpl\ITestMethodSelectorFromCallStack.cs" />
     <Compile Include="RunnerImpl\IViewTestFixture.cs" />
+    <Compile Include="RunnerImpl\SlowRunner.cs" />
     <Compile Include="View\InicjalizerView.cs" />
     <Compile Include="RunnerImpl\TestRunner.cs" />
     <Compile Include="RunnerImpl\Runner.cs" />

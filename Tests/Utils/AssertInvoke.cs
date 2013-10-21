@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System;
 using NUnit.Framework;
+using QuickTestsFramework.Internals;
 
 namespace QuickTestsFramework.Tests
 {

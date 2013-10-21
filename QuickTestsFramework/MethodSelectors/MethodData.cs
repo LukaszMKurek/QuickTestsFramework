@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System;
 using System.Reflection;
 
-namespace QuickTestsFramework
+namespace QuickTestsFramework.Internals
 {
    public sealed class MethodData
    {

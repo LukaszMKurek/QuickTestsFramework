@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
-namespace QuickTestsFramework
+namespace QuickTestsFramework.Internals
 {
     /// <summary>
     /// Catch and return exception or console, trace, debug output.
