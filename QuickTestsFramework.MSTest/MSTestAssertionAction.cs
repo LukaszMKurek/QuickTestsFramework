@@ -18,5 +18,11 @@ namespace QuickTestsFramework.MSTest
          MSTestHelper.InvokeStatic("Microsoft.VisualStudio.TestTools.UnitTesting.Assert", "Fail", message);
          //Assert.Fail(message);
       }
+
+      public void Inconclusive(string message)
+      {
+         MSTestHelper.InvokeStatic("Microsoft.VisualStudio.TestTools.UnitTesting.Assert", "Inconclusive", message);
+         //Assert.Fail(message);
+      }
    }
 }

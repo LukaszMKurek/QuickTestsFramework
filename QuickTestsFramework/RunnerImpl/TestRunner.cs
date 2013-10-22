@@ -9,6 +9,8 @@ namespace QuickTestsFramework.Internals
       public static void RunAssertion<T>(TestState testState, Action<T> assertion, IViewTestFixture view, IExceptionFilter exceptionFilter, IAssertionAction assertionAction)
       {
          bool anyFail = false;
+         bool anyIgnore = false;
+         bool anyInconclusive= false;
 
          view.PrintTestMethodHead(testState);
          if (testState.HasProblem)
@@ -49,10 +51,12 @@ namespace QuickTestsFramework.Internals
                else if (exceptionFilter.IsIgnoreException(exception))
                {
                   view.PrintTestCaseIgnore();
+                  anyIgnore = true;
                }
                else if (exceptionFilter.IsInconclusiveException(exception))
                {
                   view.PrintTestCaseInconclusive();
+                  anyInconclusive = true;
                }
                else
                {
@@ -64,6 +68,10 @@ namespace QuickTestsFramework.Internals
 
          if (anyFail)
             assertionAction.Fail("Jeden z przypadków testowych nie przeszedł.");
+         if (anyIgnore)
+            assertionAction.Ignore("Jeden z przypadków testowych zwrócił ignore.");
+         if (anyInconclusive)
+            assertionAction.Inconclusive("Jeden z przypadków testowych zwrócił inconclusive.");
       }
 
       public static TestState RunInitializer<T>(Func<IEnumerable<T>> testCaseGenerator, Action<T> inicializer, IInicjalizerView view)

@@ -18,5 +18,11 @@ namespace QuickTestsFramework.NUnit
          NUnitHelper.InvokeStatic("NUnit.Framework.Assert", "Fail", message);
          //Assert.Fail(message);
       }
+
+      public void Inconclusive(string message)
+      {
+         NUnitHelper.InvokeStatic("NUnit.Framework.Assert", "Inconclusive", message);
+         //Assert.Fail(message);
+      }
    }
 }

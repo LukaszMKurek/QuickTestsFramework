@@ -8,5 +8,6 @@ namespace QuickTestsFramework.Internals
    {
       void Ignore(string message);
       void Fail(string message);
+      void Inconclusive(string message);
    }
 }
