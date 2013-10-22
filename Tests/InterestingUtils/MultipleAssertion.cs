@@ -46,6 +46,10 @@ namespace QuickTestsFramework
                {
                   Console.WriteLine("Assertion {0} IGNORE:\r\n{1}\r\n", i, messageToDisplay);
                }
+               else if (_exceptionFilter.IsInconclusiveException(ex))
+               {
+                  Console.WriteLine("Assertion {0} INCONCLUSIVE:\r\n{1}\r\n", i, messageToDisplay);
+               }
                else
                {
                   exceptions.Add(i);

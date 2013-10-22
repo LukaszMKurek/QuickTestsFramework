@@ -9,6 +9,7 @@ namespace QuickTestsFramework.Internals
       void PrintSucces();
       void PrintTestCaseIgnore();
       void PrintTestCaseFail();
+      void PrintTestCaseInconclusive();
       void PrintTestMethodFail();
       void PrintTestCaseHead(int i, TestCaseState testCaseState);
       void PrintTestMethodHead(TestState testState);

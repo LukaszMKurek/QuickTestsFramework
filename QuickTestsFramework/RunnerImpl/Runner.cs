@@ -90,7 +90,7 @@ namespace QuickTestsFramework
           _initialized = true;
        }
 
-       private static string GetMethodName(MethodBase method)
+      private static string GetMethodName(MethodBase method)
        {
           return method.DeclaringType.FullName + method.Name + "(" + string.Join(", ", method.GetParameters().Select(x => x.ParameterType.FullName)) + ")";
        }

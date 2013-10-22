@@ -26,7 +26,7 @@ namespace QuickTestsFramework.Internals
          if (assertion == null)
             throw new ArgumentNullException("assertion");
 
-         Console.WriteLine("SLOW MODE ENABLED\r\n");
+         Console.WriteLine("*** SLOW MODE ENABLED ***\r\n");
          inicializer();
          Console.WriteLine();
          _action();
@@ -43,7 +43,7 @@ namespace QuickTestsFramework.Internals
          if (assertion == null)
             throw new ArgumentNullException("assertion");
 
-         Console.WriteLine("SLOW MODE ENABLED\r\n");
+         Console.WriteLine("*** SLOW MODE ENABLED ***\r\n");
 
          int n = 0;
          foreach (var testCase in testCaseGenerator())
@@ -54,7 +54,7 @@ namespace QuickTestsFramework.Internals
             _action();
             Console.WriteLine();
             assertion(testCase);
-            Console.WriteLine("\r\nSLOW MODE ENABLED\r\n");
+            Console.WriteLine("\r\n*** SLOW MODE ENABLED ***\r\n");
          }
       }
    }

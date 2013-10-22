@@ -28,6 +28,11 @@ namespace QuickTestsFramework.Internals
          Console.WriteLine("\r\n___ Test case FAIL _________\r\n");
       }
 
+      public void PrintTestCaseInconclusive()
+      {
+         Console.WriteLine("\r\n___ Test case INCONCLUSIVE _________\r\n");
+      }
+
       public void PrintTestMethodFail()
       {
          Console.WriteLine("\r\n___ Test FAIL _________\r\n");

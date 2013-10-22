@@ -10,6 +10,7 @@ namespace QuickTestsFramework.Internals
       string RenderException(Exception exception);
       bool IsSuccessException(Exception exception);
       bool IsIgnoreException(Exception exception);
+      bool IsInconclusiveException(Exception exception);
       void FilterExceptionThrownByAssertionRunner(Exception exception);
    }
 }

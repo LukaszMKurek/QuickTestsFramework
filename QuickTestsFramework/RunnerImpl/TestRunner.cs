@@ -50,6 +50,10 @@ namespace QuickTestsFramework.Internals
                {
                   view.PrintTestCaseIgnore();
                }
+               else if (exceptionFilter.IsInconclusiveException(exception))
+               {
+                  view.PrintTestCaseInconclusive();
+               }
                else
                {
                   view.PrintTestCaseFail();

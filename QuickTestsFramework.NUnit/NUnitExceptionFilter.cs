@@ -36,6 +36,7 @@ namespace QuickTestsFramework.NUnit
          return
             NUnitHelper.IsTypeOf(exception, "NUnit.Framework.SuccessException")
             || NUnitHelper.IsTypeOf(exception, "NUnit.Framework.AssertionException")
+            || NUnitHelper.IsTypeOf(exception, "NUnit.Framework.InconclusiveException")
             || NUnitHelper.IsTypeOf(exception, "NUnit.Framework.IgnoreException");
       }
 
@@ -51,6 +52,11 @@ namespace QuickTestsFramework.NUnit
          return NUnitHelper.IsTypeOf(exception, "NUnit.Framework.IgnoreException");
       }
 
+      public bool IsInconclusiveException(Exception exception)
+      {
+         return NUnitHelper.IsTypeOf(exception, "NUnit.Framework.InconclusiveException");
+      }
+
       /// <summary>
       /// Cut unnecesary stacktrace.
       /// </summary>
@@ -58,7 +64,7 @@ namespace QuickTestsFramework.NUnit
       public void FilterExceptionThrownByAssertionRunner(Exception exception)
       {
          //if (exception is AssertionException || exception is IgnoreException)
-         if (NUnitHelper.IsTypeOf(exception, "NUnit.Framework.AssertionException") || NUnitHelper.IsTypeOf(exception, "NUnit.Framework.IgnoreException"))
+         if (NUnitHelper.IsTypeOf(exception, "NUnit.Framework.AssertionException") || NUnitHelper.IsTypeOf(exception, "NUnit.Framework.IgnoreException") || NUnitHelper.IsTypeOf(exception, "NUnit.Framework.InconclusiveException"))
             throw exception;
       }
    }
