@@ -114,7 +114,7 @@ ExceptionInAserrt; init; tc: 9
 
 ExceptionInAserrt; assert; tc: 9
 
-___ Test case OK _________");
+___ Test case OK _________", typeof(IgnoreException), @"Jeden z przypadków testowych zwróci³ ignore.");
       }
 
       [Test]

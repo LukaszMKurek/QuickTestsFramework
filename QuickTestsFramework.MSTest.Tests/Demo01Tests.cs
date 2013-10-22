@@ -32,7 +32,7 @@ namespace QuickTestsFramework.MSTest.Tests
             });
       }
 
-      [TestMethod]
+      [TestMethod, Ignore]
       public void T02_parametrized()
       {
          _runner.Run(
