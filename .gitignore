@@ -43,7 +43,6 @@ _ReSharper*/
 
 #NuGet
 packages/
-.nuget/
 
 #ncrunch
 _NCrunch_*
