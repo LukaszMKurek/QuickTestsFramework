@@ -19,6 +19,7 @@ namespace QuickTestsFramework.Tests.Demo
       {
          _runner = RunnerHelper.Create();
          _runner.RunInitializers(this);
+         //_runner.RunTestsInSlowMode(() => BatchProcess(_clients, _products));
 
          BatchProcess(_clients, _products); // this process can be very slow, but will be called only once. We assumed that data from each tests are completly disjunctive.
 

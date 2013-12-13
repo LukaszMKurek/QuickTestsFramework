@@ -42,6 +42,24 @@ namespace QuickTestsFramework.Tests.Demo
       [RunInExclusiveGroup]
       public void T02()
       {
+         _runner.Run(
+            () => Enumerable.Range(0, 4),
+            tc =>
+            {
+               Console.WriteLine("Init T01: tc = {0}", tc);
+               return new { TestCaseValue = tc, ValueFromInitializer = tc*tc };
+            },
+            tc =>
+            {
+               Console.WriteLine("Verifi T01: tc = {0}", tc);
+               Assert.That(tc.ValueFromInitializer, Is.Not.EqualTo(4)); // simulate one assertion fail.
+            });
+      }
+
+      [Test]
+      [RunInExclusiveGroup]
+      public void T03()
+      {
          var random = new Random();
          _runner.Run(
             () => Sequential.New(_ => new
@@ -64,7 +82,7 @@ namespace QuickTestsFramework.Tests.Demo
 
       [Test]
       [TraditionalTest] // this mean that this test run only in one stage like normal NUnit tests.
-      public void T03()
+      public void T04()
       {
          var multiAssert = new MultipleAssertion(new NUnitExceptionFilter(), new NUnitAssertionAction());
 

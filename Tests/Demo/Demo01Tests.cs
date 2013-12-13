@@ -56,5 +56,24 @@ namespace QuickTestsFramework.Tests.Demo
                Assert.Fail("some reason...");
             });
       }
+
+      [Test]
+      public void T03()
+      {
+         _runner.Run(
+            () =>
+            {
+               Console.WriteLine("T03: Initialize input state.");
+               Debug.WriteLine("Debug T03: Initialize input state.");
+               
+               return new { Value = 57 }; // we can pass information to assertion delegate
+            },
+            valueFromInitializer =>
+            {
+               Console.WriteLine("T03: Value from Initializer: " + valueFromInitializer);
+
+               Assert.Fail("some reason...");
+            });
+      }
    }
 }
