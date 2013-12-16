@@ -7,11 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTestsFramework.Tests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTestsFramework.NUnit", "QuickTestsFramework.NUnit\QuickTestsFramework.NUnit.csproj", "{966DDBAF-78E8-4D91-B189-DF7D80C1EE42}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{2F96EA63-D469-4AF4-81A4-AAFF776D3FAB}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\packages.config = .nuget\packages.config
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTestsFramework.MSTest.Tests", "QuickTestsFramework.MSTest.Tests\QuickTestsFramework.MSTest.Tests.csproj", "{D2D629DE-5B08-4BC8-BE9A-A6AAA254437D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuickTestsFramework.MSTest", "QuickTestsFramework.MSTest\QuickTestsFramework.MSTest.csproj", "{0314F4E1-1F2D-4F7E-AEC3-F2141A840037}"
